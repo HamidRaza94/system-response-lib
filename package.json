@@ -1,22 +1,31 @@
 {
   "name": "system-response-lib",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "System Response Library",
   "main": "./build/index.js",
   "module": "./build/index.mjs",
   "types": "./build/index.d.ts",
-	"repository": {
+  "repository": {
     "type": "git",
-    "url": "git+https://github.com/HamidRaza94/system-response-lib.git"
+    "url": "https://github.com/HamidRaza94/system-response-lib.git"
   },
   "scripts": {
-    "build": "tsup"
+    "build": "tsup",
+		"commit": "git-cz",
+    "semantic-release": "semantic-release --branch main"
   },
   "keywords": [],
   "author": "Mohammad Hamid Raza",
   "license": "MIT",
   "devDependencies": {
+    "cz-conventional-changelog": "3.3.0",
+    "semantic-release": "23.0.0",
     "tsup": "8.0.1",
     "typescript": "5.3.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
