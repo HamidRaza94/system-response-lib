@@ -16,12 +16,16 @@ jobs:
         os: [ubuntu-latest]
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout source
+        uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm ci
+      - name: Install package with i
+        run: npm install
+      - name: Install package
+        run: npm ci
     # - run: npm test
 
   publish:
