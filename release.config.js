@@ -7,8 +7,14 @@ const config = {
       "assets": ["build/*"],
       "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
     }],
-    '@semantic-release/github'
-  ]
+		["@semantic-release/npm", {
+			"npmPublish": false,
+			"tarballDir": "build"
+		}],
+    ["@semantic-release/github", {
+			"assets": "build/*.tgz"
+		}],
+  ],
 };
 
 module.exports = config;

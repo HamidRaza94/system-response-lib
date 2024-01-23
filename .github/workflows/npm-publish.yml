@@ -27,6 +27,7 @@ jobs:
       contents: write
       issues: write
       pull-requests: write
+      id-token: write # to enable use of OIDC for npm provenance
     steps:
       - name: Checkout source
         uses: actions/checkout@v3
@@ -41,11 +42,6 @@ jobs:
         run: npm run build
       - name: Release package to GitHub
         run: npx semantic-release
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Release package to NPM
-        run: npm publish
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
