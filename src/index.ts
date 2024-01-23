@@ -1,6 +1,4 @@
 import SystemResponse from './SystemResponse';
-import codeMessages from './codeMessages';
-import statusCodes from './statusCodes';
+export * from './constants';
 
 export default SystemResponse;
-export { codeMessages, statusCodes };
