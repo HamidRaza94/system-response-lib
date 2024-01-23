@@ -1,5 +1,22 @@
-/src
+# Github
+/.github
+.gitignore
+
+# Code Formatter
+/.vscode
+.editorconfig
+.eslintrc.json
+.prettierrc.json
+
+# Node Modules
 /node_modules
 
+# Source Code
+/src
+
+# TypeScript Config
 tsconfig.json
+
+# Build Config
 tsup.config.ts
+release.config.js
