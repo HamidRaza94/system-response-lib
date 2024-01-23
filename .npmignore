@@ -20,3 +20,6 @@ tsconfig.json
 # Build Config
 tsup.config.ts
 release.config.js
+
+# Husky
+/.husky
