@@ -18,7 +18,8 @@ jobs:
           node-version: 20
       - name: Install packages
         run: npm install
-    # - run: npm test
+      - name: Run test cases
+        run: npm test
 
   publish:
     needs: [quality]
@@ -27,7 +28,7 @@ jobs:
       contents: write
       issues: write
       pull-requests: write
-      id-token: write # to enable use of OIDC for npm provenance
+      id-token: write
     steps:
       - name: Checkout source
         uses: actions/checkout@v3
@@ -39,7 +40,7 @@ jobs:
         run: npm install
       - name: Generate the build
         run: npm run build
-      - name: Release package to GitHub
+      - name: Release package
         run: npx semantic-release
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
